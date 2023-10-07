@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import UserDataService from "../services/UserDataService";
 import { FontAwesome } from "@expo/vector-icons";
 
-const LoggedInScreen = ({ navigation }) => {
+const LoggedInScreen = () => {
     const [email, setEmail] = useState("");
     const [nome, setNome] = useState("");
 
@@ -32,7 +32,7 @@ const LoggedInScreen = ({ navigation }) => {
                 <Image
                     source={{
                         uri: "https://cdn-icons-png.flaticon.com/512/666/666201.png",
-                    }} // Substitua "URL_DA_IMAGEM" pelo URL real da imagem do usuário
+                    }}
                     style={styles.profileImage}
                 />
                 <Text style={styles.welcomeText}>Bem-vindo, {nome}!</Text>

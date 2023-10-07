@@ -61,11 +61,6 @@ const LoginScreen = ({ navigation }) => {
             <View style={styles.forgotPasswordContainer}>
                 <TouchableOpacity onPress={handleSignupClick}>
                     <Text style={styles.forgotPasswordText}>
-                        Esqueci a Senha
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={handleSignupClick}>
-                    <Text style={styles.forgotPasswordText}>
                         Ainda não tem cadastro?
                     </Text>
                 </TouchableOpacity>

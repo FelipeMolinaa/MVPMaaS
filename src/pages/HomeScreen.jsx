@@ -1,66 +1,137 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import React, { useEffect, useState } from "react";
+import {
+    View,
+    Text,
+    FlatList,
+    StyleSheet,
+    Image,
+    TextInput,
+} from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { FontAwesome } from "@expo/vector-icons";
+import BooksDataService from "../services/BooksDataService";
 
-var databooks = [
-    {
-        NomeLivro: "1984",
-        Autor: "George Orwell",
-        EstadoDoLivro: "Novo",
-        CapaLivro:
-            "https://cdn.pixabay.com/photo/2016/11/29/05/45/africa-1867462_960_720.jpg",
-    },
-    {
-        NomeLivro: "Cem Anos de Solidão",
-        Autor: "Gabriel García Márquez",
-        EstadoDoLivro: "Usado",
-        CapaLivro:
-            "https://cdn.pixabay.com/photo/2015/11/19/21/11/book-1052019_960_720.jpg",
-    },
-    {
-        NomeLivro: "A Revolução dos Bichos",
-        Autor: "George Orwell",
-        EstadoDoLivro: "Novo",
-        CapaLivro:
-            "https://cdn.pixabay.com/photo/2015/08/13/00/52/book-885499_960_720.jpg",
-    },
-    {
-        NomeLivro: "O Apanhador no Campo de Centeio",
-        Autor: "J.D. Salinger",
-        EstadoDoLivro: "Usado",
-        CapaLivro:
-            "https://cdn.pixabay.com/photo/2016/02/22/10/08/books-1211581_960_720.jpg",
-    },
-    {
-        NomeLivro: "Dom Quixote",
-        Autor: "Miguel de Cervantes",
-        EstadoDoLivro: "Novo",
-        CapaLivro:
-            "https://cdn.pixabay.com/photo/2016/11/29/07/14/book-1867092_960_720.jpg",
-    },
-];
+const HomeScreen = ({ navigation }) => {
+    const [data, setData] = useState(null);
+    const [searchText, setSearchText] = useState("");
 
-export default function HomeScreen() {
+    useEffect(() => {
+        BooksDataService.getLivros().then((response) => {
+            setData(response);
+        });
+    }, []);
+
+    const searchData = async (text) => {
+        const data = await BooksDataService.getLivros();
+        if (data) {
+            const filteredData = data.filter((item) => {
+                const itemData = `${item.title.toUpperCase()} ${item.biography.toUpperCase()}`;
+                const textData = text.toUpperCase();
+                return itemData.includes(textData);
+            });
+            setData(filteredData);
+        }
+    };
+
+    const renderItem = ({ item }) => (
+        <TouchableOpacity
+            style={styles.itemContainer}
+            onPress={() => {
+                navigation.navigate("BookDetail", { id: item.id });
+            }}
+        >
+            <Image source={{ uri: item.imageUrl }} style={styles.image} />
+            <View style={styles.textContainer}>
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.description}>{item.author}</Text>
+                <Text style={styles.price}>{item.price}</Text>
+            </View>
+        </TouchableOpacity>
+    );
+
     return (
         <View style={styles.container}>
-            <Image
-                style={styles.item}
-                source={{
-                    uri: "https://cdn.pixabay.com/photo/2017/03/07/20/44/book-2123690_960_720.jpg",
-                }}
-            ></Image>
-            <Text>teste</Text>
+            <View style={styles.inputContainer}>
+                <FontAwesome
+                    name="search"
+                    size={20}
+                    color="#AB1A11"
+                    style={styles.searchIcon}
+                />
+                <TextInput
+                    placeholder="Pesquisar..."
+                    style={styles.input}
+                    placeholderTextColor="#AB1A11"
+                    onChangeText={(searchText) => {
+                        setSearchText(searchText);
+                        searchData(searchText);
+                    }}
+                    // Outras props do TextInput, se necessário
+                />
+            </View>
+            <FlatList
+                data={data}
+                numColumns={2}
+                renderItem={renderItem}
+                keyExtractor={(item) => item.id}
+            />
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
+    inputContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: "#EDEDED",
+        borderRadius: 8, // Bordas arredondadas
+        marginHorizontal: 10,
+        height: 50,
+        paddingHorizontal: 15,
+        marginBottom: 8,
+    },
+    searchIcon: {
+        marginRight: 10,
+    },
+    input: {
+        flex: 1,
+        fontSize: 16,
+        color: "#AB1A11",
+        // Outros estilos do TextInput, se necessário
+    },
     container: {
         flex: 1,
-        flexDirection: "row",
-        flexWrap: "wrap",
+        backgroundColor: "#FFFFFF",
+        alignItems: "center",
+    },
+    itemContainer: {
+        flex: 1,
+        margin: 10,
+        borderRadius: 10,
+        width: 160,
+    },
+    image: {
+        width: "100%",
+        height: 220,
+        alignSelf: "center",
+    },
+    textContainer: {
+        marginLeft: 6,
+        marginBottom: 10,
         alignItems: "flex-start",
     },
-    item: {
-        width: "50%",
-        backgroundColor: "red",
+    title: {
+        fontSize: 16,
+        fontWeight: "bold",
+    },
+    description: {
+        fontSize: 14,
+        marginBottom: 5,
+    },
+    price: {
+        fontSize: 16,
+        fontWeight: "bold",
     },
 });
+
+export default HomeScreen;

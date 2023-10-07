@@ -1,40 +1,37 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 class UserDataService {
-    // Método para cadastrar um novo usuário
     static async cadastrarUsuario(nome, email, senha) {
         try {
             const usuario = { nome, email, senha };
             await AsyncStorage.setItem(email, JSON.stringify(usuario));
-            return true; // Retorna true se o cadastro for bem-sucedido
+            return true;
         } catch (error) {
             console.error("Erro ao cadastrar usuário:", error);
-            return false; // Retorna false se ocorrer um erro ao cadastrar o usuário
+            return false;
         }
     }
 
-    // Método para verificar se o usuário está cadastrado
     static async verificarUsuario(email, senha) {
         try {
             const usuario = await JSON.parse(await AsyncStorage.getItem(email));
-            return usuario.senha === senha; // Retorna true se as senhas coincidirem, caso contrário, retorna false
+            return usuario.senha === senha;
         } catch (error) {
             console.error("Erro ao verificar usuário:", error);
-            return false; // Retorna false se ocorrer um erro ao verificar o usuário
+            return false;
         }
     }
 
-    static async getUsuario(email, senha) {
+    static async getUsuario(email) {
         try {
             const usuario = await JSON.parse(await AsyncStorage.getItem(email));
-            return usuario; // Retorna true se as senhas coincidirem, caso contrário, retorna false
+            return usuario;
         } catch (error) {
             console.error("Erro ao verificar usuário:", error);
-            return false; // Retorna false se ocorrer um erro ao verificar o usuário
+            return false;
         }
     }
 
-    //setUsuarioLogado
     static async setUsuarioLogado(email) {
         try {
             console.log("setUsuarioLogado", email);
@@ -49,7 +46,6 @@ class UserDataService {
         }
     }
 
-    // isAuthenticated
     static async isAuthenticated() {
         try {
             const usuarioLogado = await AsyncStorage.getItem("usuarioLogado");
@@ -60,11 +56,10 @@ class UserDataService {
             }
         } catch (error) {
             console.error("Erro ao verificar usuário logado:", error);
-            return false; // Em caso de erro, assumimos que não há ninguém logado
+            return false;
         }
     }
 
-    // GetAuthenticated
     static async GetAuthenticated() {
         try {
             return await AsyncStorage.getItem("usuarioLogado");
@@ -74,7 +69,6 @@ class UserDataService {
         }
     }
 
-    // Método para trocar a senha do usuário
     static async trocarSenha(email, novaSenha) {
         try {
             const usuario = JSON.parse(await AsyncStorage.getItem(email));

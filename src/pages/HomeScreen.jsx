@@ -37,7 +37,7 @@ const HomeScreen = ({ navigation }) => {
         <TouchableOpacity
             style={styles.itemContainer}
             onPress={() => {
-                navigation.navigate("BookDetail", { id: item.id });
+                navigation.navigate("BookDetail", { guid: item.guid });
             }}
         >
             <Image source={{ uri: item.imageUrl }} style={styles.image} />

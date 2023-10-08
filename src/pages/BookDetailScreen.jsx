@@ -12,15 +12,15 @@ import { FontAwesome } from "@expo/vector-icons";
 import BooksDataService from "../services/BooksDataService";
 
 const BookDetailScreen = ({ route }) => {
-    const { id } = route.params;
+    const { guid } = route.params;
     const [book, setBook] = useState(null);
 
     useEffect(() => {
-        console.log("BookDetailScreen", id);
-        BooksDataService.getLivro(id).then((response) => {
+        console.log("BookDetailScreen", guid);
+        BooksDataService.getLivro(guid).then((response) => {
             setBook(response[0]);
         });
-    }, [id]);
+    }, [guid]);
 
     return (
         <View style={styles.container}>

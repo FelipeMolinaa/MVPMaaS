@@ -1,10 +1,11 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import bookData from './../data/books.json'; 
+import bookCategorias from './../data/booksCategory.json'; 
 
 class BooksDataService {
     static async getLivros() {
         try {
-            var livros = JSON.parse(await AsyncStorage.getItem("livros"));
+            let livros = JSON.parse(await AsyncStorage.getItem("livros"));
             if (livros == null) livros = [];
             return livros;
         } catch (error) {
@@ -13,27 +14,50 @@ class BooksDataService {
         }
     }
 
-    static async getLivro(guid) {
+    static async getLivro(id) {
         try {
-            var livros = JSON.parse(await AsyncStorage.getItem("livros"));
+            let livros = JSON.parse(await AsyncStorage.getItem("livros"));
             if (livros == null) return null;
             return livros.filter((livro) => {
-                return livro.guid == guid;
-            });
+                return livro.id == id;
+                })
         } catch (error) {
             console.error("Erro ao pegar livro:", error);
             return false;
         }
     }
 
-    static async setBooksCollection(){
-        await AsyncStorage.setItem("livros",JSON.stringify(bookData.books));
+    static async setLivros(){
+        
+        await AsyncStorage.setItem("livrosVersion",JSON.stringify(bookData.version))
+        await AsyncStorage.setItem("livros",JSON.stringify(bookData.books))
+        await AsyncStorage.setItem("categorias",JSON.stringify(bookCategorias.data))
+    }
+
+    static async getCategorias() {
+        try {
+            let categorias = JSON.parse(await AsyncStorage.getItem("categorias"));
+            if (categorias == null) categorias = [];
+            return categorias;
+        } catch (error) {
+            console.error("Erro ao pegar categorias:", error);
+            return false;
+        }
+    }
+
+    static async formatPrice(value){
+        return 'R$'+value;
         }
 
     static async saveBooks() {
         try {
-            if ((await BooksDataService.getLivros().length) == 0) return;
-            BooksDataService.setBooksCollection();
+            AsyncStorage.removeItem("livros");
+            let bookVersion = AsyncStorage.getItem("livrosVersion");
+            if(bookData.version != bookVersion){
+                AsyncStorage.removeItem("livros");
+                BooksDataService.setLivros();
+                } 
+            
             return true;
         } catch (error) {
             console.error("Erro ao cadastrar livro:", error);

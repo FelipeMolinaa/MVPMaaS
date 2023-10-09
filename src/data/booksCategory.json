@@ -1,118 +1,110 @@
-{"category":[
+{"data":[
     {
-        "id":"1",
-        "category":"Administração, Negócios e Economia"
+        "id":1,
+        "category":"AdministraÃ§Ã£o, NegÃ³cios e Economia"
     },
     {
-        "id":"2",
+        "id":2,
         "category":"Arte, Cinema e Fotografia"
     },
     {
-        "id":"3",
+        "id":3,
         "category":"Artesanato, Casa e Estilo de Vida"
     },
     {
-        "id":"4",
+        "id":4,
         "category":"Autoajuda"
     },
     {
-        "id":"5",
-        "category":"Biografias e Histórias Reais"
+        "id":5,
+        "category":"Biografias e HistÃ³rias Reais"
     },
     {
-        "id":"6",
-        "category":"Ciências"
+        "id":6,
+        "category":"CiÃªncias"
     },
     {
-        "id":"7",
-        "category":"Computação, Informática e Mídias Digitais"
+        "id":7,
+        "category":"ComputaÃ§Ã£o, InformÃ¡tica e MÃ­dias Digitais"
     },
     {
-        "id":"8",
-        "category":"Crônicas, Humor e Entretenimento"
+        "id":8,
+        "category":"CrÃ´nicas, Humor e Entretenimento"
     },
     {
-        "id":"9",
+        "id":9,
         "category":"Direito"
     },
     {
-        "id":"10",
-        "category":"Educação, Referência e Didáticos"
+        "id":10,
+        "category":"EducaÃ§Ã£o, ReferÃªncia e DidÃ¡ticos"
     },
     {
-        "id":"11",
+        "id":11,
         "category":"Engenharia e Transporte"
     },
-    {
-        "id":"12",
-        "category":"Erótico"
-    },
-    {
-        "id":"13",
+        {
+        "id":13,
         "category":"Esportes e Lazer"
     },
     {
-        "id":"14",
-        "category":"Fantasia, Horror e Ficção Científica"
+        "id":14,
+        "category":"Fantasia, Horror e FicÃ§Ã£o CientÃ­fica"
     },
     {
-        "id":"15",
-        "category":"Gastronomia e Culinária"
+        "id":15,
+        "category":"Gastronomia e CulinÃ¡ria"
     },
     {
-        "id":"16",
-        "category":"História"
+        "id":16,
+        "category":"HistÃ³ria"
     },
     {
-        "id":"17",
-        "category":"HQs, Mangás e Graphic Novels"
+        "id":17,
+        "category":"HQs, MangÃ¡s e Graphic Novels"
     },
     {
-        "id":"18",
+        "id":18,
         "category":"Infantil"
     },
-    {
-        "id":"19",
-        "category":"LGBTQ+"
+        {
+        "id":20,
+        "category":"Literatura e FicÃ§Ã£o"
     },
     {
-        "id":"20",
-        "category":"Literatura e Ficção"
-    },
-    {
-        "id":"21",
+        "id":21,
         "category":"Medicina"
     },
     {
-        "id":"22",
-        "category":"Policial, Suspense e Mistério"
+        "id":22,
+        "category":"Policial, Suspense e MistÃ©rio"
     },
     {
-        "id":"23",
-        "category":"Política, Filosofia e Ciências Sociais"
+        "id":23,
+        "category":"PolÃ­tica, Filosofia e CiÃªncias Sociais"
     },
     {
-        "id":"24",
-        "category":"Religião e Espiritualidade"
+        "id":24,
+        "category":"ReligiÃ£o e Espiritualidade"
     },
     {
-        "id":"25",
+        "id":25,
         "category":"Romance"
     },
     {
-        "id":"26",
-        "category":"Saúde e Família"
+        "id":26,
+        "category":"SaÃºde e FamÃ­lia"
     },
     {
-        "id":"27",
+        "id":27,
         "category":"Turismo e Guias de Viagem"
     },
     {
-        "id":"28",
-        "category":"Inglês e Outras Línguas"
+        "id":28,
+        "category":"InglÃªs e Outras LÃ­nguas"
     },
     {
-        "id":"29",
+        "id":29,
         "category":"Jovens e Adolescentes"
     }
 ]

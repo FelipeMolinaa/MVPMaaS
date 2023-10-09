@@ -12,15 +12,16 @@ import { FontAwesome } from "@expo/vector-icons";
 import BooksDataService from "../services/BooksDataService";
 
 const BookDetailScreen = ({ route }) => {
-    const { guid } = route.params;
+    const { id } = route.params;
     const [book, setBook] = useState(null);
 
     useEffect(() => {
-        console.log("BookDetailScreen", guid);
-        BooksDataService.getLivro(guid).then((response) => {
+        BooksDataService.getLivro(id)
+        .then((response) => {
+            if(response[0].imageUrl == '') response[0].imageUrl = 'https://cdn-cosmos.bluesoft.com.br/products/7891443064994'
             setBook(response[0]);
         });
-    }, [guid]);
+    }, [id]);
 
     return (
         <View style={styles.container}>

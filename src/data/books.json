@@ -1,76 +1,196 @@
-{"books":
+{
+    "version":202310090040,
+    "books":
     [
         {
-            guid:"3ffb9301-f668-42b2-b1c4-6cf8ff796329",
-            title: "Harry Potter e a Pedra Filosofal de teste",
+            id: 1,
+            idCategory: 8,
+            title: "Harry Potter e a Pedra Filosofal",
             author: "J. K. Rowling",
-            conditionTitle:
-                "Capa um pouco desgastada, páginas levemente ",
-            price: "R$10",
-            biography:
-                "O primeiro livro da série Harry Potter, lançado em 1997. Ele apresenta o jovem bruxo Harry Potter, que descobre que é um bruxo e é aceito na Escola de Magia e Bruxaria de Hogwarts, onde ele faz amigos, descobre segredos sobre seu passado e enfrenta o malvado bruxo Lord Voldemort.",
-            imageUrl:
-                "https://m.media-amazon.com/images/I/51lRMYwP-4L.jpg",
+            conditionTitle: "Capa um pouco desgastada, páginas levemente ",
+            price: "R$10,00",
+            biography: "O primeiro livro da série Harry Potter, lançado em 1997. Ele apresenta o jovem bruxo Harry Potter, que descobre que é um bruxo e é aceito na Escola de Magia e Bruxaria de Hogwarts, onde ele faz amigos, descobre segredos sobre seu passado e enfrenta o malvado bruxo Lord Voldemort.",
+            imageUrl:"https://m.media-amazon.com/images/I/51lRMYwP-4L.jpg",
         },
         {
-            guid:"6431e156-ec94-470f-abda-403cbdaaecae",
+            id: 2,
+            idCategory: "20",
             title: "Dom Casmurro",
             author: "Machado de Assis",
-            conditionTitle:
-                "Capa e páginas bem conservadas, quase como novas.",
-            price: "R$8",
-            biography:
-                "Um dos romances mais conhecidos da literatura brasileira, publicado originalmente em 1900. O livro conta a história de Bentinho, um jovem que se apaixona por Capitu, mas a suspeita de traição gera ciúmes e dúvidas que permeiam toda a trama.",
-            imageUrl:
-                "https://m.media-amazon.com/images/I/81XpG2iKTlL._AC_UF1000,1000_QL80_.jpg",
+            conditionTitle:"Capa e páginas bem conservadas, quase como novas.",
+            price: "R$8,00",
+            biography:"Um dos romances mais conhecidos da literatura brasileira, publicado originalmente em 1900. O livro conta a história de Bentinho, um jovem que se apaixona por Capitu, mas a suspeita de traição gera ciúmes e dúvidas que permeiam toda a trama.",
+            imageUrl:"https://m.media-amazon.com/images/I/81XpG2iKTlL._AC_UF1000,1000_QL80_.jpg",
         },
         {
-            guid:"93e4cfdd-d320-4cc6-a349-ed20ad52944c",
+            id: 3,
+            idCategory: 20,
             title: "1984",
             author: "George Orwell",
-            price: "R$12",
-            conditionTitle:
-                "Páginas amarelas, meio amassadas e com algumas páginas riscadas.",
-            biography:
-                "Publicado em 1949, '1984' é uma obra distópica clássica que descreve um futuro totalitário onde o Estado exerce controle absoluto sobre a vida das pessoas. O livro introduz conceitos como o Grande Irmão e a novilíngua, e explora temas de vigilância, liberdade e resistência.",
-            imageUrl:
-                "https://m.media-amazon.com/images/I/61M9jDcsl2L._AC_UF1000,1000_QL80_.jpg",
+            price: "R$12,00",
+            conditionTitle:"Páginas amarelas, meio amassadas e com algumas páginas riscadas.",
+            biography:"Publicado em 1949, '1984' é uma obra distópica clássica que descreve um futuro totalitário onde o Estado exerce controle absoluto sobre a vida das pessoas. O livro introduz conceitos como o Grande Irmão e a novilíngua, e explora temas de vigilância, liberdade e resistência.",
+            imageUrl:"https://m.media-amazon.com/images/I/61M9jDcsl2L._AC_UF1000,1000_QL80_.jpg",
         },
         {
-            guid:"876bbab7-8648-423b-8bef-ee2371ac31a5",
+            id: 4,
+            idCategory: 20,
             title: "Cem Anos de Solidão",
-            conditionTitle:
-                "Capa e páginas em bom estado, algumas manchas de uso",
+            conditionTitle:"Capa e páginas em bom estado, algumas manchas de uso",
             author: "Gabriel García Márquez",
-            biography:
-                "Lançado em 1967, é considerado um dos principais exemplos do realismo mágico na literatura. O romance narra a história da família Buendía ao longo de várias gerações em Macondo, uma cidade fictícia na América Latina. A obra explora temas de solidão, amor, poder e decadência.",
-            price: "R$14",
-            imageUrl:
-                "https://m.media-amazon.com/images/I/81SQPrWU7SL._AC_UF1000,1000_QL80_.jpg",
+            biography:"Lançado em 1967, é considerado um dos principais exemplos do realismo mágico na literatura. O romance narra a história da família Buendía ao longo de várias gerações em Macondo, uma cidade fictícia na América Latina. A obra explora temas de solidão, amor, poder e decadência.",
+            price: "R$14,00",
+            imageUrl:"https://m.media-amazon.com/images/I/81SQPrWU7SL._AC_UF1000,1000_QL80_.jpg",
         },
         {
-            guid:"ff6e1704-6a3e-41f4-b552-f70e3b46443e",
+            id: 5,
+            idCategory: 8,
             title: "O Senhor dos Anéis",
-            conditionTitle:
-                "Capa e páginas em boas condições, ligeiramente amareladas pelo tempo.",
+            conditionTitle:"Capa e páginas em boas condições, ligeiramente amareladas pelo tempo.",
             author: "J. R. R. Tolkien",
-            biography:
-                "A trilogia 'O Senhor dos Anéis' foi publicada entre 1954 e 1955. Ela é uma obra de fantasia épica que segue as aventuras de Frodo Bolsón enquanto ele tenta destruir um poderoso anel para evitar que caia nas mãos do maligno Sauron. A série é ambientada em um mundo chamado Terra-média e é amplamente considerada uma obra-prima da fantasia moderna.",
-            price: "R$18",
-            imageUrl:
-                "https://m.media-amazon.com/images/I/71ZLavBjpRL._AC_UF1000,1000_QL80_.jpg",
+            biography:"A trilogia 'O Senhor dos Anéis' foi publicada entre 1954 e 1955. Ela é uma obra de fantasia épica que segue as aventuras de Frodo Bolsón enquanto ele tenta destruir um poderoso anel para evitar que caia nas mãos do maligno Sauron. A série é ambientada em um mundo chamado Terra-média e é amplamente considerada uma obra-prima da fantasia moderna.",
+            price: "R$18,00",
+            imageUrl:"https://m.media-amazon.com/images/I/71ZLavBjpRL._AC_UF1000,1000_QL80_.jpg",
         },
         {
-            guid:"2cdf61a3-3abb-4643-8a3c-ff78404d2819",
+            id: 6,
             title: "Crime e Castigo",
-            conditionTitle:
-                "Páginas um pouco desgastadas, mas em bom estado geral.",
+            idCategory: 22,
+            conditionTitle:"Páginas um pouco desgastadas, mas em bom estado geral.",
             author: "Fiódor Dostoiévski",
-            price: "R$11",
-            biography:
-                "Publicado em 1866, 'Crime e Castigo' é um romance psicológico que explora a mente de um estudante universitário, Raskólnikov, que comete um assassinato e lida com a culpa e o remorso resultantes. A obra aborda questões morais, éticas e existenciais.",
-            imageUrl:
-                "https://www.lpm.com.br/livros/imagens/crime_e_castigo_hq_9788525434104_hd.jpg",
+            price: "R$11,00",
+            biography:"Publicado em 1866, 'Crime e Castigo' é um romance psicológico que explora a mente de um estudante universitário, Raskólnikov, que comete um assassinato e lida com a culpa e o remorso resultantes. A obra aborda questões morais, éticas e existenciais.",
+            imageUrl:"https://www.lpm.com.br/livros/imagens/crime_e_castigo_hq_9788525434104_hd.jpg",
         },
+        {
+            id: 7,
+            idCategory: 14,
+            title: "Dom Quixote",
+            author: "Miguel de Cervantes",
+            conditionTitle: "Bom estado",
+            price: "R$15,99",
+            biography: "Dom Quixote é um dos romances mais importantes da literatura espanhola e mundial. A história segue as aventuras de um cavaleiro sonhador chamado Dom Quixote, que parte em busca de aventuras com seu fiel escudeiro Sancho Pança.",
+            imageUrl: "https://m.media-amazon.com/images/I/916NkrNfV4L._AC_UL320_.jpg"
+          },
+          {
+            id: 8,
+            idCategory: 25,
+            title: "Romeu e Julieta",
+            author: "William Shakespeare",
+            conditionTitle: "Ótimo estado",
+            price: "R$12,50",
+            biography: "Romeu e Julieta é uma tragédia de amor escrita por Shakespeare. A peça conta a história de dois jovens apaixonados, Romeu e Julieta, que pertencem a famílias rivais em Verona.",
+            imageUrl: "https://m.media-amazon.com/images/I/81BcpLExpYL._AC_UL320_.jpg"
+          },
+          {
+            id: 9,
+            idCategory: 1,
+            title: "Matar um Rouxinol",
+            author: "Harper Lee",
+            conditionTitle: "Capa levemente desgastada",
+            price: "R$14,25",
+            biography: "Matar um Rouxinol é um romance clássico que aborda questões de racismo e injustiça no sul dos Estados Unidos. A história é narrada pela jovem Scout Finch e seu pai, Atticus.",
+            imageUrl: "https://m.media-amazon.com/images/I/91WKPd60P4L._AC_UL320_.jpg"
+          },
+          {
+            id: 10,
+            idCategory: 23,
+            title: "A Metamorfose",
+            author: "Franz Kafka",
+            conditionTitle: "Ótimo estado",
+            price: "R$9,99",
+            biography: "A Metamorfose é uma novela de Franz Kafka que narra a história de Gregor Samsa, um jovem que acorda transformado em um inseto gigante. O livro explora temas de alienação e desumanização.",
+            imageUrl: "https://m.media-amazon.com/images/I/8115Gj1cb6L._AC_UL320_.jpg"
+          },
+          {
+            id: 11,
+            idCategory: 22,
+            title: "O Grande Gatsby",
+            author: "F. Scott Fitzgerald",
+            conditionTitle: "Novo",
+            price: "R$14,99",
+            biography: "O Grande Gatsby é um romance ambientado nos anos 1920 em Nova York. A história segue o misterioso Jay Gatsby e seu amor por Daisy Buchanan, esposa de Tom Buchanan.",
+            imageUrl: "https://m.media-amazon.com/images/I/81Na-vY7EML._AC_UL320_.jpg"
+          },
+          {
+            id: 12,
+            idCategory: 22,
+            title: "O Apanhador no Campo de Centeio",
+            author: "J.D. Salinger",
+            conditionTitle: "Capa desgastada, páginas em bom estado",
+            price: "R$11,25",
+            biography: "O Apanhador no Campo de Centeio é narrado por Holden Caulfield, um adolescente que narra suas experiências após ser expulso de uma escola preparatória. O livro aborda temas de alienação e adolescência.",
+            imageUrl: "https://m.media-amazon.com/images/I/71b3GDZMzSL._AC_UL320_.jpg"
+          },
+          {
+            id: 13,
+            idCategory: 24,
+            title: "A Divina Comédia",
+            author: "Dante Alighieri",
+            conditionTitle: "Ótimo estado",
+            price: "R$13,75",
+            biography: "A Divina Comédia é um épico poético que narra a jornada de Dante pelo Inferno, Purgatório e Paraíso. É uma das obras mais importantes da literatura italiana e mundial.",
+            imageUrl: "https://m.media-amazon.com/images/I/91ByhMcJ2eL._AC_UL320_.jpg"
+          },
+          {
+            id: 14,
+            idCategory: 14,
+            title: "Moby Dick",
+            author: "Herman Melville",
+            conditionTitle: "Capa desgastada, páginas em bom estado",
+            price: "R$14,50",
+            biography: "Moby Dick é uma epopeia marítima que conta a história do capitão Ahab e sua obsessão por caçar a baleia branca, Moby Dick. Uma obra-prima da literatura norte-americana.",
+            imageUrl: "https://m.media-amazon.com/images/I/A1xWjc50fmL._AC_UL320_.jpg"
+          },
+          {
+            id: 15,
+            idCategory: 20,
+            title: "O Retrato de Dorian Gray",
+            author: "Oscar Wilde",
+            conditionTitle: "Ótimo estado",
+            price: "R$12,75",
+            biography: "O Retrato de Dorian Gray é um romance que explora a corrupção moral. Dorian Gray é um jovem que mantém sua juventude e beleza enquanto um retrato seu envelhece e reflete seus pecados.",
+            imageUrl: "https://m.media-amazon.com/images/I/51REmr5NmnL._AC_UL320_.jpg"
+          },
+          {
+            id: 16,
+            idCategory: 20,
+            title: "Ulisses",
+            author: "James Joyce",
+            conditionTitle: "Usado, em bom estado",
+            price: "R$16,25",
+            biography: "Ulisses é uma obra modernista que narra um dia na vida de Leopold Bloom em Dublin. O livro é conhecido por sua complexa narrativa e estilo literário inovador.",
+            imageUrl: "https://m.media-amazon.com/images/I/61kwgQSK0uL._AC_UL320_.jpg"
+          },
+          {
+            id: 17,
+            idCategory: 14,
+            title: "A Ilha do Tesouro",
+            author: "Robert Louis Stevenson",
+            conditionTitle: "Novo",
+            price: "R$11,99",
+            biography: "A Ilha do Tesouro é um clássico da aventura que segue a busca pelo tesouro do infame pirata Capitão Flint. O jovem Jim Hawkins se envolve em uma jornada repleta de perigos.",
+            imageUrl: "https://m.media-amazon.com/images/I/81N-C60M53L._AC_UL320_.jpg"
+          },
+          {
+            id: 18,
+            idCategory: 14,
+            title: "A Guerra dos Mundos",
+            author: "H.G. Wells",
+            conditionTitle: "Usado, em bom estado",
+            price: "R$12,99",
+            biography: "A Guerra dos Mundos é um clássico da ficção científica que descreve uma invasão alienígena na Terra. A história segue a luta pela sobrevivência da humanidade contra os marcianos.",
+            imageUrl: "https://m.media-amazon.com/images/I/71w172G57mS._AC_UL320_.jpg"
+          },
+          {
+            id: 19,
+            idCategory: 25,
+            title: "O Morro dos Ventos Uivantes",
+            author: "Emily Brontë",
+            conditionTitle: "Bom estado",
+            price: "R$15,25",
+            biography: "O Morro dos Ventos Uivantes é um romance gótico que narra a história da tumultuosa relação entre Heathcliff e Catherine. Ambientado na sombria Yorkshire, é uma das obras mais emblemáticas da literatura inglesa.",
+            imageUrl: "https://m.media-amazon.com/images/I/71lqmkoeosL._AC_UL320_.jpg"
+          }
     ]
 }

@@ -1,5 +1,4 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
 class UserDataService {
     static async cadastrarUsuario(nome, email, senha) {
         try {

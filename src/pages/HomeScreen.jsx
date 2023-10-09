@@ -14,11 +14,32 @@ import BooksDataService from "../services/BooksDataService";
 const HomeScreen = ({ navigation }) => {
     const [data, setData] = useState(null);
     const [searchText, setSearchText] = useState("");
+    let livros = {}
+    let categorias = {}
 
     useEffect(() => {
-        BooksDataService.getLivros().then((response) => {
-            setData(response);
-        });
+        BooksDataService.getLivros()
+            .then((response) => { livros = response;})
+            .then(BooksDataService.getCategorias)
+            .then(res => {
+
+                categorias = res;
+                let itens = []
+                livros.forEach(elem => {  
+
+                    let idCategory = elem.idCategory;
+                    const categoryItem = categorias.filter((item) => {
+                        return idCategory == item.id
+                        })
+
+                    elem.category = categoryItem[0].category;
+                    itens.push(elem);
+                    
+                    });
+
+                setData(itens)
+                })
+        
     }, []);
 
     const searchData = async (text) => {
@@ -34,6 +55,9 @@ const HomeScreen = ({ navigation }) => {
     };
 
     const renderItem = ({ item }) => (
+
+        // item.price = BooksDataService.formatPrice({item.price)
+
         <TouchableOpacity
             style={styles.itemContainer}
             onPress={() => {
@@ -42,6 +66,7 @@ const HomeScreen = ({ navigation }) => {
         >
             <Image source={{ uri: item.imageUrl }} style={styles.image} />
             <View style={styles.textContainer}>
+                <Text style={styles.category}>{item.category}</Text>
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.description}>{item.author}</Text>
                 <Text style={styles.price}>{item.price}</Text>
@@ -69,12 +94,14 @@ const HomeScreen = ({ navigation }) => {
                     // Outras props do TextInput, se necessário
                 />
             </View>
-            <FlatList
-                data={data}
-                numColumns={2}
-                renderItem={renderItem}
-                keyExtractor={(item) => item.id}
-            />
+            <View style={styles.bookList}>
+                <FlatList
+                    data={data}
+                    numColumns={2}
+                    renderItem={renderItem}
+                    keyExtractor={(item) => item.id}
+                />
+            </View>
         </View>
     );
 };
@@ -101,36 +128,54 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
+        width: '100%',
         backgroundColor: "#FFFFFF",
         alignItems: "center",
     },
+    bookList: {
+        flex: 1,
+        flexDirection: 'center',
+        alignItems: "center",
+        width:'100%',
+        backgroundColor: '#F6F6F6',
+        },
     itemContainer: {
         flex: 1,
-        margin: 10,
-        borderRadius: 10,
-        width: 160,
-    },
+        width: 190,
+        margin: 5,
+        borderRadius: 0,
+        backgroundColor: '#FFFFFF',
+        },
     image: {
         width: "100%",
-        height: 220,
+        height: 260,
         alignSelf: "center",
+        marginBottom: 5
     },
     textContainer: {
-        marginLeft: 6,
+        padding: 15,
+        marginLeft: 0,
         marginBottom: 10,
         alignItems: "flex-start",
     },
+    category: {
+        fontSize: 12,
+        color: '#666666'
+    },
     title: {
-        fontSize: 16,
+        fontSize: 15,
         fontWeight: "bold",
     },
     description: {
         fontSize: 14,
-        marginBottom: 5,
+        marginBottom: 10,
     },
     price: {
-        fontSize: 16,
+        width: '100%',
+        fontSize: 18,
         fontWeight: "bold",
+        textAlign: 'right',
+        color: '#3366CC',
     },
 });
 

@@ -7,6 +7,7 @@ import { FontAwesome } from "@expo/vector-icons";
 
 import LoginScreen from "./src/pages/LoginScreen";
 import HomeScreen from "./src/pages/HomeScreen";
+import CategoriesScreen from "./src/pages/CategoriesScreen";
 import SignupScreen from "./src/pages/SignupScreen";
 import UserDataService from "./src/services/UserDataService";
 import LoggedInScreen from "./src/pages/LoggedInScreen";
@@ -41,6 +42,16 @@ const MainTabNavigator = () => {
                     title: "Inicio",
                     tabBarIcon: ({ color, size }) => (
                         <FontAwesome name="home" color={color} size={size} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="CategoriesScreen"
+                component={CategoriesScreen}
+                options={{
+                    title: "Categorias",
+                    tabBarIcon: ({ color, size }) => (
+                        <FontAwesome name="list" color={color} size={size} />
                     ),
                 }}
             />

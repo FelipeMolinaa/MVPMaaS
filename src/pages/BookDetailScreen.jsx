@@ -16,8 +16,9 @@ const BookDetailScreen = ({ route }) => {
     const [book, setBook] = useState(null);
 
     useEffect(() => {
-        console.log("BookDetailScreen", id);
-        BooksDataService.getLivro(id).then((response) => {
+        BooksDataService.getLivro(id)
+        .then((response) => {
+            if(response[0].imageUrl == '') response[0].imageUrl = 'https://cdn-cosmos.bluesoft.com.br/products/7891443064994'
             setBook(response[0]);
         });
     }, [id]);

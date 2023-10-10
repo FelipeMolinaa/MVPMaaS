@@ -28,7 +28,6 @@ class BooksDataService {
     }
 
     static async setLivros(){
-        
         await AsyncStorage.setItem("livrosVersion",JSON.stringify(bookData.version))
         await AsyncStorage.setItem("livros",JSON.stringify(bookData.books))
         await AsyncStorage.setItem("categorias",JSON.stringify(bookCategorias.data))

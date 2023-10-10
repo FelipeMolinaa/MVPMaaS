@@ -12,48 +12,26 @@ import { FontAwesome } from "@expo/vector-icons";
 import BooksDataService from "../services/BooksDataService";
 
 const HomeScreen = ({ navigation, route }) => {
-
     const [data, setData] = useState(null);
     const [searchText, setSearchText] = useState("");
 
-    let idCategoryFilter = 0;
-    if(route.params){
-        idCategoryFilter = route.params.idCategory;
-        }
+    if (route.params) {
+        var idCategory = route.params.idCategory;
+    }
 
-    let livros = {}
     useEffect(() => {
-
-        BooksDataService.getLivros()
-            .then((response) => { livros = response;})
-            .then(BooksDataService.getCategorias)
-            .then(categorias => {
-                
-                let itens = []
-
-                // if(idCategoryFilter > 0){
-                //     let livrosFiltered = livros.filter((item) => {
-                //         return item.idCategory == idCategoryFilter
-                //         })
-                //     livros = livrosFiltered;
-                //     }
-                
-                livros.forEach(elem => {  
-
-                    let idCategory = elem.idCategory;
-                    const categoryItem = categorias.filter((item) => {
-                        return idCategory == item.id
-                        })
-
-                    elem.category = categoryItem[0].category;
-                    itens.push(elem);
-                    
-                    });
-
-                setData(itens)
-                })
-        
-    }, []);
+        BooksDataService.getLivros().then((response) => {
+            if (idCategory > 0) {
+                setData(
+                    response.filter((item) => {
+                        return item.idCategory == idCategory;
+                    })
+                );
+            } else {
+                setData(response);
+            }
+        });
+    }, [idCategory]);
 
     const searchData = async (text) => {
         const data = await BooksDataService.getLivros();
@@ -138,29 +116,29 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        width: '100%',
+        width: "100%",
         backgroundColor: "#FFFFFF",
         alignItems: "center",
     },
     bookList: {
         flex: 1,
-        flexDirection: 'center',
+        flexDirection: "center",
         alignItems: "center",
-        width:'100%',
-        backgroundColor: '#F6F6F6',
-        },
+        width: "100%",
+        backgroundColor: "#F6F6F6",
+    },
     itemContainer: {
         flex: 1,
-        width: 190,
+        width: 170,
         margin: 5,
         borderRadius: 0,
-        backgroundColor: '#FFFFFF',
-        },
+        backgroundColor: "#FFFFFF",
+    },
     image: {
         width: "100%",
         height: 260,
         alignSelf: "center",
-        marginBottom: 5
+        marginBottom: 5,
     },
     textContainer: {
         padding: 15,
@@ -170,7 +148,7 @@ const styles = StyleSheet.create({
     },
     category: {
         fontSize: 12,
-        color: '#666666'
+        color: "#666666",
     },
     title: {
         fontSize: 15,
@@ -181,11 +159,11 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     price: {
-        width: '100%',
+        width: "100%",
         fontSize: 18,
         fontWeight: "bold",
-        textAlign: 'right',
-        color: '#3366CC',
+        textAlign: "right",
+        color: "#3366CC",
     },
 });
 

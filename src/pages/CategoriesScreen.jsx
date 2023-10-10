@@ -38,7 +38,7 @@ const CategoriesScreen = ({ navigation }) => {
                                 elem.fontWeight = 'normal';
                             }
 
-                        categories.push(elem);
+                        categories.push(elem); 
                         
                         });
                     setData(categories);
@@ -52,7 +52,7 @@ const CategoriesScreen = ({ navigation }) => {
         <TouchableOpacity
             style={styles.itemContainer}
             onPress={() => {
-                navigation.navigate("HomeScreen", { guid: item.guid });
+                navigation.navigate("HomeScreen", { idCategory: item.id });
                 }}
         >
             <View style={styles.textContainer}>

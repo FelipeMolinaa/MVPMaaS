@@ -11,20 +11,33 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { FontAwesome } from "@expo/vector-icons";
 import BooksDataService from "../services/BooksDataService";
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation, route }) => {
+
     const [data, setData] = useState(null);
     const [searchText, setSearchText] = useState("");
-    let livros = {}
-    let categorias = {}
 
+    let idCategoryFilter = 0;
+    if(route.params){
+        idCategoryFilter = route.params.idCategory;
+        }
+
+    let livros = {}
     useEffect(() => {
+
         BooksDataService.getLivros()
             .then((response) => { livros = response;})
             .then(BooksDataService.getCategorias)
-            .then(res => {
-
-                categorias = res;
+            .then(categorias => {
+                
                 let itens = []
+
+                // if(idCategoryFilter > 0){
+                //     let livrosFiltered = livros.filter((item) => {
+                //         return item.idCategory == idCategoryFilter
+                //         })
+                //     livros = livrosFiltered;
+                //     }
+                
                 livros.forEach(elem => {  
 
                     let idCategory = elem.idCategory;
@@ -55,9 +68,6 @@ const HomeScreen = ({ navigation }) => {
     };
 
     const renderItem = ({ item }) => (
-
-        // item.price = BooksDataService.formatPrice({item.price)
-
         <TouchableOpacity
             style={styles.itemContainer}
             onPress={() => {

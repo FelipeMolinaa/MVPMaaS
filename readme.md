@@ -24,7 +24,7 @@ Este repositório abriga um aplicativo desenvolvido com React Native e Expo, vis
 
 ## Imagens:
 
-[](./docs/images/homeScreen.jpeg)
-[](./docs/images/HomeFiltradaScreen.jpeg)
-[](./docs/images/detalhesLivroScreen.jpeg)
-[](./docs/images/usuarioScreen.jpeg)
+![image](./docs/images/homeScreen.jpeg)
+![image](./docs/images/HomeFiltradaScreen.jpeg)
+![image](./docs/images/detalhesLivroScreen.jpeg)
+![image](./docs/images/usuarioScreen.jpeg)
